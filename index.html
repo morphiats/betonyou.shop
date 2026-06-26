@@ -6,14 +6,31 @@
     <title>Bet On Yourself | Coming Soon</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes ambient {
-            0%, 100% { background-position: 0% 50%; }
+        @keyframes liquid {
+            0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+        
         .animate-bg {
-            background: linear-gradient(-45deg, #061026, #0b1329, #161233, #020617);
-            background-size: 400% 400%;
-            animation: ambient 15s ease infinite;
+            background: linear-gradient(135deg, #0a1c3a 0%, #020617 50%, #1e3a8a 100%);
+            background-size: 300% 300%;
+            animation: liquid 12s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Organic wave overlay to soften logo edges */
+        .animate-bg::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, transparent 30%, #020617 80%);
+            opacity: 0.4;
+            pointer-events: none;
         }
     </style>
 </head>
